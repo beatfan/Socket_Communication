@@ -1,0 +1,7 @@
+E:\desktop\beatfan\Project\WinForm\Socket\TCP\TCPClient\TCPClient\bin\Debug\TCPClient.exe
+E:\desktop\beatfan\Project\WinForm\Socket\TCP\TCPClient\TCPClient\bin\Debug\TCPClient.pdb
+E:\desktop\beatfan\Project\WinForm\Socket\TCP\TCPClient\TCPClient\obj\Debug\TCPClient.Properties.Resources.resources
+E:\desktop\beatfan\Project\WinForm\Socket\TCP\TCPClient\TCPClient\obj\Debug\TCPClient.csproj.GenerateResource.Cache
+E:\desktop\beatfan\Project\WinForm\Socket\TCP\TCPClient\TCPClient\obj\Debug\TCPClient.exe
+E:\desktop\beatfan\Project\WinForm\Socket\TCP\TCPClient\TCPClient\obj\Debug\TCPClient.pdb
+E:\desktop\beatfan\Project\WinForm\Socket\TCP\TCPClient\TCPClient\obj\Debug\TCPClientTest.TcpShow.resources

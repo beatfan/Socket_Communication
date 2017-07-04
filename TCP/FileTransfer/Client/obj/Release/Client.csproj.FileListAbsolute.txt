@@ -1,0 +1,7 @@
+E:\desktop\beatfan\Project\WinForm\Socket\TCP\FileTransfer\Client\bin\Release\Client.exe
+E:\desktop\beatfan\Project\WinForm\Socket\TCP\FileTransfer\Client\bin\Release\Client.pdb
+E:\desktop\beatfan\Project\WinForm\Socket\TCP\FileTransfer\Client\obj\Release\Client.Properties.Resources.resources
+E:\desktop\beatfan\Project\WinForm\Socket\TCP\FileTransfer\Client\obj\Release\Client.SendForm.resources
+E:\desktop\beatfan\Project\WinForm\Socket\TCP\FileTransfer\Client\obj\Release\Client.csproj.GenerateResource.Cache
+E:\desktop\beatfan\Project\WinForm\Socket\TCP\FileTransfer\Client\obj\Release\Client.exe
+E:\desktop\beatfan\Project\WinForm\Socket\TCP\FileTransfer\Client\obj\Release\Client.pdb

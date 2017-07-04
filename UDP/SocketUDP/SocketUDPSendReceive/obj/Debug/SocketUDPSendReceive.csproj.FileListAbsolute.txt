@@ -1,0 +1,11 @@
+E:\desktop\beatfan\Project\WinForm\Socket\Broadcast\SocketUDP\Broadcast\obj\Debug\SocketUDPSendReceive.SendRec.resources
+E:\desktop\beatfan\Project\WinForm\Socket\Broadcast\SocketUDP\Broadcast\obj\Debug\SocketUDPSendReceive.csproj.GenerateResource.Cache
+E:\desktop\beatfan\Project\WinForm\Socket\Broadcast\SocketUDP\SocketUDPSendReceive\bin\Debug\SocketUDPSendReceive.exe.config
+E:\desktop\beatfan\Project\WinForm\Socket\Broadcast\SocketUDP\SocketUDPSendReceive\bin\Debug\SocketUDPSendReceive.exe
+E:\desktop\beatfan\Project\WinForm\Socket\Broadcast\SocketUDP\SocketUDPSendReceive\bin\Debug\SocketUDPSendReceive.pdb
+E:\desktop\beatfan\Project\WinForm\Socket\Broadcast\SocketUDP\SocketUDPSendReceive\obj\Debug\SocketUDPSendReceive.Properties.Resources.resources
+E:\desktop\beatfan\Project\WinForm\Socket\Broadcast\SocketUDP\SocketUDPSendReceive\obj\Debug\SocketUDPSendReceive.SendRec.resources
+E:\desktop\beatfan\Project\WinForm\Socket\Broadcast\SocketUDP\SocketUDPSendReceive\obj\Debug\SocketUDPSendReceive.csproj.GenerateResource.Cache
+E:\desktop\beatfan\Project\WinForm\Socket\Broadcast\SocketUDP\SocketUDPSendReceive\obj\Debug\SocketUDPSendReceive.exe
+E:\desktop\beatfan\Project\WinForm\Socket\Broadcast\SocketUDP\SocketUDPSendReceive\obj\Debug\SocketUDPSendReceive.pdb
+E:\desktop\beatfan\Project\WinForm\Socket\Broadcast\SocketUDP\SocketUDPSendReceive\obj\Debug\SocketUDPSendReceive.csprojResolveAssemblyReference.cache

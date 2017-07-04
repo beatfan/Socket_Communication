@@ -1,0 +1,4 @@
+E:\SG\UdpClientProgram\AsyncServer\AsyncServer\bin\Debug\AsyncServer.exe
+E:\SG\UdpClientProgram\AsyncServer\AsyncServer\bin\Debug\AsyncServer.pdb
+E:\SG\UdpClientProgram\AsyncServer\AsyncServer\obj\x86\Debug\AsyncServer.exe
+E:\SG\UdpClientProgram\AsyncServer\AsyncServer\obj\x86\Debug\AsyncServer.pdb

@@ -1,0 +1,3213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ReceiveScanInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="receiveInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReceiveScanInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReceiveScanInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReceiveWeightInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="receiveInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReceiveWeightInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReceiveWeightInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Scanlist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sql" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ScanlistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ScanlistResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddRfidTag">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rfidTag" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddRfidTagResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddRfidTagResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteRfidTag">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rfidTag" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rfidNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteRfidTagResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteRfidTagResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentRfidNO">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCurrentRfidNOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCurrentRfidNOResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReceiveRfidInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="receiveInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReceiveRfidInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReceiveRfidInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BindRfidNO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="licensePlate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rfidNO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BindRfidNOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BindRfidNOResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnBindRfidNO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rfidNO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnBindRfidNOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UnBindRfidNOResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryRfidBindInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="QueryRfidBindInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QueryRfidBindInfoResult" type="tns:ResultsOfRfidBindInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResultsOfRfidBindInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsPass" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ArrayOfRfidBindInfo" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRfidBindInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RfidBindInfo" nillable="true" type="tns:RfidBindInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RfidBindInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RfidIndex" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicensePlateNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RfidNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BindTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UnBindTime" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="VehicleNO" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="QueryTop10VehicleInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="QueryTop10VehicleInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QueryTop10VehicleInfoResult" type="tns:ResultsOfVehicleInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResultsOfVehicleInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsPass" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ArrayOfVehicleInfo" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfVehicleInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VehicleInfo" nillable="true" type="tns:VehicleInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VehicleInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Rfid" type="tns:RfidBindInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="VehicleNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PreLicensePlateNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastLicensePlateNumbe" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EnterFactoryTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LeaveFactoryTime" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EnterGate" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LeaveGate" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="EnterImage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OutImage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetLastVehicleInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetLastVehicleInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetLastVehicleInfoResult" type="tns:ResultsOfVehicleInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNotMeasurateInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetNotMeasurateInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetNotMeasurateInfoResult" type="tns:ResultsOfMeasurationInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResultsOfMeasurationInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsPass" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ArrayOfMeasurationInfo" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMeasurationInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MeasurationInfo" nillable="true" type="tns:MeasurationInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MeasurationInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PalletNO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MeasurationNO" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Weight" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Volume" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ScanTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MeasurationTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PicTime" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImageAddress" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AreaNO" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetNewMeasurePic">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetNewMeasurePicResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetNewMeasurePicResult" type="tns:ResultsOfMeasurationInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryMeasurateInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="palletNO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="currentPage" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryMeasurateInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QueryMeasurateInfoResult" type="tns:ResultsOfMeasurationInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMeasurationDetailByNO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="palletNO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMeasurationDetailByNOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetMeasurationDetailByNOResult" type="tns:ResultsOfMeasurationInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAreaInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="areaType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAreaInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAreaInfoResult" type="tns:ResultsOfAreaInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResultsOfAreaInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsPass" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ArrayOfAreaInfo" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAreaInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AreaInfo" nillable="true" type="tns:AreaInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AreaInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AreaNO" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AreaType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AreaName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetMeasurationTotalCount">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMeasurationTotalCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetMeasurationTotalCountResult" type="tns:Results" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Results">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsPass" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckMeasurationStatus">
+        <s:complexType />
+      </s:element>
+      <s:element name="CheckMeasurationStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckMeasurationStatusResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMeasureNetCameraInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="areaNO" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMeasureNetCameraInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetMeasureNetCameraInfoResult" type="tns:ResultsOfSTCNetCameraInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResultsOfSTCNetCameraInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsPass" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ArrayOfSTCNetCameraInfo" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSTCNetCameraInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="STCNetCameraInfo" nillable="true" type="tns:STCNetCameraInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="STCNetCameraInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="netCameraInfo" type="tns:NetCameraInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="nvrInfo" type="tns:NVRInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NetCameraInfo">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:DeviceInfo">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="CameraType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="VideoTitle" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="OnvifAddress" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Model" type="tns:ModelInfo" />
+              <s:element minOccurs="0" maxOccurs="1" name="VideoInfomation" type="tns:ArrayOfVideoInfo" />
+              <s:element minOccurs="0" maxOccurs="1" name="NVRInfo" type="tns:NetCameraNVRInfo" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="DeviceInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Index" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SerialNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Port" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserPWD" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IsOnline" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FullGroupNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ParentGroupNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ParentGroupName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AssetNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InstallTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AddMethod" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remark" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NVRInfo">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:DeviceInfo">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Model" type="tns:ModelInfo" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ModelInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ModelIndex" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeviceType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeviceModel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeviceBrand" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ModelRemark" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DPCSyn" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfVideoInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VideoInfo" nillable="true" type="tns:VideoInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VideoInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="StreamType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StreamInfo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Resolution" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FrameRate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Compressed" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NetCameraNVRInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="NvrIndex" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NvrIp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Channel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChannelStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Protocal" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetWharfVehicleInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="areaNO" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWharfVehicleInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetWharfVehicleInfoResult" type="tns:ResultssOfWharfVehicleInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResultssOfWharfVehicleInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsPass" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data2" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="QueryWharfVehicleInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="condition" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="currentPage" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResultsOfWharfVehicleInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsPass" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ArrayOfWharfVehicleInfo" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfWharfVehicleInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WharfVehicleInfo" nillable="true" type="tns:WharfVehicleInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WharfVehicleInfo">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:VehicleInfo">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="WharfIndex" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="RfidNO" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EnterWharfTime" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LeaveWharfTime" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="AreaNO" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Container" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="AreaNoName" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="QueryWharfVehicleInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QueryWharfVehicleInfoResult" type="tns:ResultsOfWharfVehicleInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWharfNetCameraInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="areaNO" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWharfNetCameraInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetWharfNetCameraInfoResult" type="tns:ResultsOfSTCNetCameraInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContainerInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vehicleNO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResultsOfContainerDetailInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsPass" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ArrayOfContainerDetailInfo" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfContainerDetailInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ContainerDetailInfo" nillable="true" type="tns:ContainerDetailInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ContainerDetailInfo">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ContainerInfo">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="PreLicensePlateNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AreaName" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ContainerInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PalletNO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ContainerNO" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="VehicleNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContainerTime" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AreaNO" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetContainerInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetContainerInfoResult" type="tns:ResultsOfContainerDetailInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContainerInfoByArea">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="areaNO" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContainerInfoByAreaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetContainerInfoByAreaResult" type="tns:ResultsOfContainerDetailInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContainerInfoByTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vehicleNO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContainerInfoByTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetContainerInfoByTimeResult" type="tns:ResultsOfContainerDetailInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryContainerInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="conditions" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mtNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vhicleNO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="currentPage" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryContainerInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QueryContainerInfoResult" type="tns:ResultsOfContainerDetailInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleDetiaInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetVehicleDetiaInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehicleDetiaInfoResult" type="tns:ResultsOfVehicleInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGateNetCameraInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="areaNO" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="isInorOut" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGateNetCameraInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetGateNetCameraInfoResult" type="tns:ResultsOfSTCNetCameraInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryVehicleInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="condition" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="currentPage" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryVehicleInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QueryVehicleInfoResult" type="tns:ResultsOfVehicleInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVehicleAlarm">
+        <s:complexType />
+      </s:element>
+      <s:complexType name="ResultsOfVehicleAlarmInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsPass" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ArrayOfVehicleAlarmInfo" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfVehicleAlarmInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VehicleAlarmInfo" nillable="true" type="tns:VehicleAlarmInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VehicleAlarmInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AlarmIndex" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="VehicleNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PreLicensePlateNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RfidNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StartTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EndTime" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetVehicleAlarmResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetVehicleAlarmResult" type="tns:ResultsOfVehicleAlarmInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminateAlarm">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="alarmIndex" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Result">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsPass" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="MSG" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Obj" />
+          <s:element minOccurs="1" maxOccurs="1" name="Count" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EliminateAlarmResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EliminateAlarmResult" type="tns:Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyVehiclePlate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vehilceNO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="plate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyVehiclePlateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ModifyVehiclePlateResult" type="tns:Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryAlarmInfos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="startTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endTime" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="currentPage" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResultsOfAlarmInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsPass" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ArrayOfAlarmInfo" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAlarmInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AlarmInfo" nillable="true" type="tns:AlarmInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AlarmInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AlarmIndex" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AlarmName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AlarmType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AlarmLevel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AlarmStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AlarmStartTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AlarmUpdateTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AlarmEndTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AlarmEndPerson" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeviceIndex" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeviceName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeviceIp" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="QueryAlarmInfosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QueryAlarmInfosResult" type="tns:ResultsOfAlarmInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="DataSet" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:element ref="s:schema" />
+            <s:any />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="ResultsOfRfidBindInfo" type="tns:ResultsOfRfidBindInfo" />
+      <s:element name="ResultsOfVehicleInfo" type="tns:ResultsOfVehicleInfo" />
+      <s:element name="ResultsOfMeasurationInfo" type="tns:ResultsOfMeasurationInfo" />
+      <s:element name="ResultsOfAreaInfo" type="tns:ResultsOfAreaInfo" />
+      <s:element name="Results" type="tns:Results" />
+      <s:element name="int" type="s:int" />
+      <s:element name="ResultsOfSTCNetCameraInfo" type="tns:ResultsOfSTCNetCameraInfo" />
+      <s:element name="ResultssOfWharfVehicleInfo" type="tns:ResultssOfWharfVehicleInfo" />
+      <s:element name="ResultsOfWharfVehicleInfo" type="tns:ResultsOfWharfVehicleInfo" />
+      <s:element name="ResultsOfContainerDetailInfo" type="tns:ResultsOfContainerDetailInfo" />
+      <s:element name="ResultsOfVehicleAlarmInfo" type="tns:ResultsOfVehicleAlarmInfo" />
+      <s:element name="Result" type="tns:Result" />
+      <s:element name="ResultsOfAlarmInfo" type="tns:ResultsOfAlarmInfo" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ReceiveScanInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:ReceiveScanInfo" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveScanInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:ReceiveScanInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveWeightInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:ReceiveWeightInfo" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveWeightInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:ReceiveWeightInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ScanlistSoapIn">
+    <wsdl:part name="parameters" element="tns:Scanlist" />
+  </wsdl:message>
+  <wsdl:message name="ScanlistSoapOut">
+    <wsdl:part name="parameters" element="tns:ScanlistResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddRfidTagSoapIn">
+    <wsdl:part name="parameters" element="tns:AddRfidTag" />
+  </wsdl:message>
+  <wsdl:message name="AddRfidTagSoapOut">
+    <wsdl:part name="parameters" element="tns:AddRfidTagResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteRfidTagSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteRfidTag" />
+  </wsdl:message>
+  <wsdl:message name="DeleteRfidTagSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteRfidTagResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentRfidNOSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCurrentRfidNO" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentRfidNOSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCurrentRfidNOResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveRfidInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:ReceiveRfidInfo" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveRfidInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:ReceiveRfidInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="BindRfidNOSoapIn">
+    <wsdl:part name="parameters" element="tns:BindRfidNO" />
+  </wsdl:message>
+  <wsdl:message name="BindRfidNOSoapOut">
+    <wsdl:part name="parameters" element="tns:BindRfidNOResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnBindRfidNOSoapIn">
+    <wsdl:part name="parameters" element="tns:UnBindRfidNO" />
+  </wsdl:message>
+  <wsdl:message name="UnBindRfidNOSoapOut">
+    <wsdl:part name="parameters" element="tns:UnBindRfidNOResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryRfidBindInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryRfidBindInfo" />
+  </wsdl:message>
+  <wsdl:message name="QueryRfidBindInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryRfidBindInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryTop10VehicleInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryTop10VehicleInfo" />
+  </wsdl:message>
+  <wsdl:message name="QueryTop10VehicleInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryTop10VehicleInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLastVehicleInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLastVehicleInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetLastVehicleInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLastVehicleInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNotMeasurateInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNotMeasurateInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetNotMeasurateInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNotMeasurateInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNewMeasurePicSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNewMeasurePic" />
+  </wsdl:message>
+  <wsdl:message name="GetNewMeasurePicSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNewMeasurePicResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryMeasurateInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryMeasurateInfo" />
+  </wsdl:message>
+  <wsdl:message name="QueryMeasurateInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryMeasurateInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMeasurationDetailByNOSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMeasurationDetailByNO" />
+  </wsdl:message>
+  <wsdl:message name="GetMeasurationDetailByNOSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMeasurationDetailByNOResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAreaInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAreaInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAreaInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAreaInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMeasurationTotalCountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMeasurationTotalCount" />
+  </wsdl:message>
+  <wsdl:message name="GetMeasurationTotalCountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMeasurationTotalCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckMeasurationStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckMeasurationStatus" />
+  </wsdl:message>
+  <wsdl:message name="CheckMeasurationStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckMeasurationStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMeasureNetCameraInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMeasureNetCameraInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetMeasureNetCameraInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMeasureNetCameraInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWharfVehicleInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWharfVehicleInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetWharfVehicleInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWharfVehicleInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryWharfVehicleInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryWharfVehicleInfo" />
+  </wsdl:message>
+  <wsdl:message name="QueryWharfVehicleInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryWharfVehicleInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWharfNetCameraInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWharfNetCameraInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetWharfNetCameraInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWharfNetCameraInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContainerInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContainerInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetContainerInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContainerInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContainerInfoByAreaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContainerInfoByArea" />
+  </wsdl:message>
+  <wsdl:message name="GetContainerInfoByAreaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContainerInfoByAreaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContainerInfoByTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContainerInfoByTime" />
+  </wsdl:message>
+  <wsdl:message name="GetContainerInfoByTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContainerInfoByTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryContainerInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryContainerInfo" />
+  </wsdl:message>
+  <wsdl:message name="QueryContainerInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryContainerInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleDetiaInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehicleDetiaInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleDetiaInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehicleDetiaInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGateNetCameraInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGateNetCameraInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetGateNetCameraInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGateNetCameraInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryVehicleInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryVehicleInfo" />
+  </wsdl:message>
+  <wsdl:message name="QueryVehicleInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryVehicleInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleAlarmSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVehicleAlarm" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleAlarmSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVehicleAlarmResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminateAlarmSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminateAlarm" />
+  </wsdl:message>
+  <wsdl:message name="EliminateAlarmSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminateAlarmResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModifyVehiclePlateSoapIn">
+    <wsdl:part name="parameters" element="tns:ModifyVehiclePlate" />
+  </wsdl:message>
+  <wsdl:message name="ModifyVehiclePlateSoapOut">
+    <wsdl:part name="parameters" element="tns:ModifyVehiclePlateResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryAlarmInfosSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryAlarmInfos" />
+  </wsdl:message>
+  <wsdl:message name="QueryAlarmInfosSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryAlarmInfosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveScanInfoHttpGetIn">
+    <wsdl:part name="receiveInfo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveScanInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveWeightInfoHttpGetIn">
+    <wsdl:part name="receiveInfo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveWeightInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ScanlistHttpGetIn">
+    <wsdl:part name="sql" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ScanlistHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="AddRfidTagHttpGetIn">
+    <wsdl:part name="rfidTag" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddRfidTagHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="DeleteRfidTagHttpGetIn">
+    <wsdl:part name="rfidTag" type="s:string" />
+    <wsdl:part name="rfidNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteRfidTagHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentRfidNOHttpGetIn" />
+  <wsdl:message name="GetCurrentRfidNOHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveRfidInfoHttpGetIn">
+    <wsdl:part name="receiveInfo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveRfidInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="BindRfidNOHttpGetIn">
+    <wsdl:part name="licensePlate" type="s:string" />
+    <wsdl:part name="rfidNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BindRfidNOHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UnBindRfidNOHttpGetIn">
+    <wsdl:part name="rfidNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UnBindRfidNOHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="QueryRfidBindInfoHttpGetIn" />
+  <wsdl:message name="QueryRfidBindInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultsOfRfidBindInfo" />
+  </wsdl:message>
+  <wsdl:message name="QueryTop10VehicleInfoHttpGetIn" />
+  <wsdl:message name="QueryTop10VehicleInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultsOfVehicleInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetLastVehicleInfoHttpGetIn" />
+  <wsdl:message name="GetLastVehicleInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultsOfVehicleInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetNotMeasurateInfoHttpGetIn" />
+  <wsdl:message name="GetNotMeasurateInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultsOfMeasurationInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetNewMeasurePicHttpGetIn" />
+  <wsdl:message name="GetNewMeasurePicHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultsOfMeasurationInfo" />
+  </wsdl:message>
+  <wsdl:message name="QueryMeasurateInfoHttpGetIn">
+    <wsdl:part name="palletNO" type="s:string" />
+    <wsdl:part name="date" type="s:string" />
+    <wsdl:part name="currentPage" type="s:string" />
+    <wsdl:part name="pageSize" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="QueryMeasurateInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultsOfMeasurationInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetMeasurationDetailByNOHttpGetIn">
+    <wsdl:part name="palletNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMeasurationDetailByNOHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultsOfMeasurationInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAreaInfoHttpGetIn">
+    <wsdl:part name="areaType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAreaInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultsOfAreaInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetMeasurationTotalCountHttpGetIn" />
+  <wsdl:message name="GetMeasurationTotalCountHttpGetOut">
+    <wsdl:part name="Body" element="tns:Results" />
+  </wsdl:message>
+  <wsdl:message name="CheckMeasurationStatusHttpGetIn" />
+  <wsdl:message name="CheckMeasurationStatusHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetMeasureNetCameraInfoHttpGetIn">
+    <wsdl:part name="areaNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMeasureNetCameraInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultsOfSTCNetCameraInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetWharfVehicleInfoHttpGetIn">
+    <wsdl:part name="areaNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWharfVehicleInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultssOfWharfVehicleInfo" />
+  </wsdl:message>
+  <wsdl:message name="QueryWharfVehicleInfoHttpGetIn">
+    <wsdl:part name="condition" type="s:string" />
+    <wsdl:part name="date" type="s:string" />
+    <wsdl:part name="currentPage" type="s:string" />
+    <wsdl:part name="pageSize" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="QueryWharfVehicleInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultsOfWharfVehicleInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetWharfNetCameraInfoHttpGetIn">
+    <wsdl:part name="areaNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWharfNetCameraInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultsOfSTCNetCameraInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetContainerInfoHttpGetIn">
+    <wsdl:part name="vehicleNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetContainerInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultsOfContainerDetailInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetContainerInfoByAreaHttpGetIn">
+    <wsdl:part name="areaNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetContainerInfoByAreaHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultsOfContainerDetailInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetContainerInfoByTimeHttpGetIn">
+    <wsdl:part name="vehicleNO" type="s:string" />
+    <wsdl:part name="startTime" type="s:string" />
+    <wsdl:part name="endTime" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetContainerInfoByTimeHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultsOfContainerDetailInfo" />
+  </wsdl:message>
+  <wsdl:message name="QueryContainerInfoHttpGetIn">
+    <wsdl:part name="conditions" type="s:string" />
+    <wsdl:part name="mtNo" type="s:string" />
+    <wsdl:part name="vhicleNO" type="s:string" />
+    <wsdl:part name="date" type="s:string" />
+    <wsdl:part name="currentPage" type="s:string" />
+    <wsdl:part name="pageSize" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="QueryContainerInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultsOfContainerDetailInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleDetiaInfoHttpGetIn" />
+  <wsdl:message name="GetVehicleDetiaInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultsOfVehicleInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetGateNetCameraInfoHttpGetIn">
+    <wsdl:part name="areaNO" type="s:string" />
+    <wsdl:part name="isInorOut" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetGateNetCameraInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultsOfSTCNetCameraInfo" />
+  </wsdl:message>
+  <wsdl:message name="QueryVehicleInfoHttpGetIn">
+    <wsdl:part name="condition" type="s:string" />
+    <wsdl:part name="date" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
+    <wsdl:part name="currentPage" type="s:string" />
+    <wsdl:part name="pageSize" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="QueryVehicleInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultsOfVehicleInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleAlarmHttpGetIn" />
+  <wsdl:message name="GetVehicleAlarmHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultsOfVehicleAlarmInfo" />
+  </wsdl:message>
+  <wsdl:message name="EliminateAlarmHttpGetIn">
+    <wsdl:part name="alarmIndex" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EliminateAlarmHttpGetOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="ModifyVehiclePlateHttpGetIn">
+    <wsdl:part name="vehilceNO" type="s:string" />
+    <wsdl:part name="plate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ModifyVehiclePlateHttpGetOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="QueryAlarmInfosHttpGetIn">
+    <wsdl:part name="startTime" type="s:string" />
+    <wsdl:part name="endTime" type="s:string" />
+    <wsdl:part name="currentPage" type="s:string" />
+    <wsdl:part name="pageSize" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="QueryAlarmInfosHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultsOfAlarmInfo" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveScanInfoHttpPostIn">
+    <wsdl:part name="receiveInfo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveScanInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveWeightInfoHttpPostIn">
+    <wsdl:part name="receiveInfo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveWeightInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ScanlistHttpPostIn">
+    <wsdl:part name="sql" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ScanlistHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="AddRfidTagHttpPostIn">
+    <wsdl:part name="rfidTag" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddRfidTagHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="DeleteRfidTagHttpPostIn">
+    <wsdl:part name="rfidTag" type="s:string" />
+    <wsdl:part name="rfidNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteRfidTagHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentRfidNOHttpPostIn" />
+  <wsdl:message name="GetCurrentRfidNOHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveRfidInfoHttpPostIn">
+    <wsdl:part name="receiveInfo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveRfidInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="BindRfidNOHttpPostIn">
+    <wsdl:part name="licensePlate" type="s:string" />
+    <wsdl:part name="rfidNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BindRfidNOHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UnBindRfidNOHttpPostIn">
+    <wsdl:part name="rfidNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UnBindRfidNOHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="QueryRfidBindInfoHttpPostIn" />
+  <wsdl:message name="QueryRfidBindInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultsOfRfidBindInfo" />
+  </wsdl:message>
+  <wsdl:message name="QueryTop10VehicleInfoHttpPostIn" />
+  <wsdl:message name="QueryTop10VehicleInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultsOfVehicleInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetLastVehicleInfoHttpPostIn" />
+  <wsdl:message name="GetLastVehicleInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultsOfVehicleInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetNotMeasurateInfoHttpPostIn" />
+  <wsdl:message name="GetNotMeasurateInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultsOfMeasurationInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetNewMeasurePicHttpPostIn" />
+  <wsdl:message name="GetNewMeasurePicHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultsOfMeasurationInfo" />
+  </wsdl:message>
+  <wsdl:message name="QueryMeasurateInfoHttpPostIn">
+    <wsdl:part name="palletNO" type="s:string" />
+    <wsdl:part name="date" type="s:string" />
+    <wsdl:part name="currentPage" type="s:string" />
+    <wsdl:part name="pageSize" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="QueryMeasurateInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultsOfMeasurationInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetMeasurationDetailByNOHttpPostIn">
+    <wsdl:part name="palletNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMeasurationDetailByNOHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultsOfMeasurationInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAreaInfoHttpPostIn">
+    <wsdl:part name="areaType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAreaInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultsOfAreaInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetMeasurationTotalCountHttpPostIn" />
+  <wsdl:message name="GetMeasurationTotalCountHttpPostOut">
+    <wsdl:part name="Body" element="tns:Results" />
+  </wsdl:message>
+  <wsdl:message name="CheckMeasurationStatusHttpPostIn" />
+  <wsdl:message name="CheckMeasurationStatusHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetMeasureNetCameraInfoHttpPostIn">
+    <wsdl:part name="areaNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMeasureNetCameraInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultsOfSTCNetCameraInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetWharfVehicleInfoHttpPostIn">
+    <wsdl:part name="areaNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWharfVehicleInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultssOfWharfVehicleInfo" />
+  </wsdl:message>
+  <wsdl:message name="QueryWharfVehicleInfoHttpPostIn">
+    <wsdl:part name="condition" type="s:string" />
+    <wsdl:part name="date" type="s:string" />
+    <wsdl:part name="currentPage" type="s:string" />
+    <wsdl:part name="pageSize" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="QueryWharfVehicleInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultsOfWharfVehicleInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetWharfNetCameraInfoHttpPostIn">
+    <wsdl:part name="areaNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWharfNetCameraInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultsOfSTCNetCameraInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetContainerInfoHttpPostIn">
+    <wsdl:part name="vehicleNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetContainerInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultsOfContainerDetailInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetContainerInfoByAreaHttpPostIn">
+    <wsdl:part name="areaNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetContainerInfoByAreaHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultsOfContainerDetailInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetContainerInfoByTimeHttpPostIn">
+    <wsdl:part name="vehicleNO" type="s:string" />
+    <wsdl:part name="startTime" type="s:string" />
+    <wsdl:part name="endTime" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetContainerInfoByTimeHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultsOfContainerDetailInfo" />
+  </wsdl:message>
+  <wsdl:message name="QueryContainerInfoHttpPostIn">
+    <wsdl:part name="conditions" type="s:string" />
+    <wsdl:part name="mtNo" type="s:string" />
+    <wsdl:part name="vhicleNO" type="s:string" />
+    <wsdl:part name="date" type="s:string" />
+    <wsdl:part name="currentPage" type="s:string" />
+    <wsdl:part name="pageSize" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="QueryContainerInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultsOfContainerDetailInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleDetiaInfoHttpPostIn" />
+  <wsdl:message name="GetVehicleDetiaInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultsOfVehicleInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetGateNetCameraInfoHttpPostIn">
+    <wsdl:part name="areaNO" type="s:string" />
+    <wsdl:part name="isInorOut" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetGateNetCameraInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultsOfSTCNetCameraInfo" />
+  </wsdl:message>
+  <wsdl:message name="QueryVehicleInfoHttpPostIn">
+    <wsdl:part name="condition" type="s:string" />
+    <wsdl:part name="date" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
+    <wsdl:part name="currentPage" type="s:string" />
+    <wsdl:part name="pageSize" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="QueryVehicleInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultsOfVehicleInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetVehicleAlarmHttpPostIn" />
+  <wsdl:message name="GetVehicleAlarmHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultsOfVehicleAlarmInfo" />
+  </wsdl:message>
+  <wsdl:message name="EliminateAlarmHttpPostIn">
+    <wsdl:part name="alarmIndex" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EliminateAlarmHttpPostOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="ModifyVehiclePlateHttpPostIn">
+    <wsdl:part name="vehilceNO" type="s:string" />
+    <wsdl:part name="plate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ModifyVehiclePlateHttpPostOut">
+    <wsdl:part name="Body" element="tns:Result" />
+  </wsdl:message>
+  <wsdl:message name="QueryAlarmInfosHttpPostIn">
+    <wsdl:part name="startTime" type="s:string" />
+    <wsdl:part name="endTime" type="s:string" />
+    <wsdl:part name="currentPage" type="s:string" />
+    <wsdl:part name="pageSize" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="QueryAlarmInfosHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultsOfAlarmInfo" />
+  </wsdl:message>
+  <wsdl:portType name="MeasurationMgrSoap">
+    <wsdl:operation name="ReceiveScanInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">扫描总入口</wsdl:documentation>
+      <wsdl:input message="tns:ReceiveScanInfoSoapIn" />
+      <wsdl:output message="tns:ReceiveScanInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveWeightInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">重量接收总入口</wsdl:documentation>
+      <wsdl:input message="tns:ReceiveWeightInfoSoapIn" />
+      <wsdl:output message="tns:ReceiveWeightInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Scanlist">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取测量区扫描枪列表</wsdl:documentation>
+      <wsdl:input message="tns:ScanlistSoapIn" />
+      <wsdl:output message="tns:ScanlistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRfidTag">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">新增标签</wsdl:documentation>
+      <wsdl:input message="tns:AddRfidTagSoapIn" />
+      <wsdl:output message="tns:AddRfidTagSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRfidTag">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">删除标签</wsdl:documentation>
+      <wsdl:input message="tns:DeleteRfidTagSoapIn" />
+      <wsdl:output message="tns:DeleteRfidTagSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentRfidNO">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取大门标签显示</wsdl:documentation>
+      <wsdl:input message="tns:GetCurrentRfidNOSoapIn" />
+      <wsdl:output message="tns:GetCurrentRfidNOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveRfidInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">RFID识别总入口</wsdl:documentation>
+      <wsdl:input message="tns:ReceiveRfidInfoSoapIn" />
+      <wsdl:output message="tns:ReceiveRfidInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BindRfidNO">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">车辆和RFID绑定</wsdl:documentation>
+      <wsdl:input message="tns:BindRfidNOSoapIn" />
+      <wsdl:output message="tns:BindRfidNOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UnBindRfidNO">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">RFID标签解绑</wsdl:documentation>
+      <wsdl:input message="tns:UnBindRfidNOSoapIn" />
+      <wsdl:output message="tns:UnBindRfidNOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryRfidBindInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取已绑定车牌信息</wsdl:documentation>
+      <wsdl:input message="tns:QueryRfidBindInfoSoapIn" />
+      <wsdl:output message="tns:QueryRfidBindInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryTop10VehicleInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取最后的10辆车</wsdl:documentation>
+      <wsdl:input message="tns:QueryTop10VehicleInfoSoapIn" />
+      <wsdl:output message="tns:QueryTop10VehicleInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastVehicleInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取最后一辆进厂的车</wsdl:documentation>
+      <wsdl:input message="tns:GetLastVehicleInfoSoapIn" />
+      <wsdl:output message="tns:GetLastVehicleInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNotMeasurateInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">量測即時信息</wsdl:documentation>
+      <wsdl:input message="tns:GetNotMeasurateInfoSoapIn" />
+      <wsdl:output message="tns:GetNotMeasurateInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewMeasurePic">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取最新拍照的一块栈板</wsdl:documentation>
+      <wsdl:input message="tns:GetNewMeasurePicSoapIn" />
+      <wsdl:output message="tns:GetNewMeasurePicSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryMeasurateInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询已测量的信息</wsdl:documentation>
+      <wsdl:input message="tns:QueryMeasurateInfoSoapIn" />
+      <wsdl:output message="tns:QueryMeasurateInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMeasurationDetailByNO">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据栈板序列号获取测量详情</wsdl:documentation>
+      <wsdl:input message="tns:GetMeasurationDetailByNOSoapIn" />
+      <wsdl:output message="tns:GetMeasurationDetailByNOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAreaInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据区域类型获取区域列表</wsdl:documentation>
+      <wsdl:input message="tns:GetAreaInfoSoapIn" />
+      <wsdl:output message="tns:GetAreaInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMeasurationTotalCount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取当天测量总数</wsdl:documentation>
+      <wsdl:input message="tns:GetMeasurationTotalCountSoapIn" />
+      <wsdl:output message="tns:GetMeasurationTotalCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckMeasurationStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">检查测量信息是否有变化</wsdl:documentation>
+      <wsdl:input message="tns:CheckMeasurationStatusSoapIn" />
+      <wsdl:output message="tns:CheckMeasurationStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMeasureNetCameraInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取测量区头的录像机信息</wsdl:documentation>
+      <wsdl:input message="tns:GetMeasureNetCameraInfoSoapIn" />
+      <wsdl:output message="tns:GetMeasureNetCameraInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWharfVehicleInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取当前停留在码头的车辆</wsdl:documentation>
+      <wsdl:input message="tns:GetWharfVehicleInfoSoapIn" />
+      <wsdl:output message="tns:GetWharfVehicleInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryWharfVehicleInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询码头车辆历史数据</wsdl:documentation>
+      <wsdl:input message="tns:QueryWharfVehicleInfoSoapIn" />
+      <wsdl:output message="tns:QueryWharfVehicleInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWharfNetCameraInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取码头的录像机信息</wsdl:documentation>
+      <wsdl:input message="tns:GetWharfNetCameraInfoSoapIn" />
+      <wsdl:output message="tns:GetWharfNetCameraInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContainerInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据车辆编号获取装柜信息</wsdl:documentation>
+      <wsdl:input message="tns:GetContainerInfoSoapIn" />
+      <wsdl:output message="tns:GetContainerInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContainerInfoByArea">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据码头编号获取该码头装柜信息</wsdl:documentation>
+      <wsdl:input message="tns:GetContainerInfoByAreaSoapIn" />
+      <wsdl:output message="tns:GetContainerInfoByAreaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContainerInfoByTime">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据车辆编号和进出码头时间获取装柜信息</wsdl:documentation>
+      <wsdl:input message="tns:GetContainerInfoByTimeSoapIn" />
+      <wsdl:output message="tns:GetContainerInfoByTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryContainerInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询装柜信息</wsdl:documentation>
+      <wsdl:input message="tns:QueryContainerInfoSoapIn" />
+      <wsdl:output message="tns:QueryContainerInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleDetiaInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取大门车辆即时信息★</wsdl:documentation>
+      <wsdl:input message="tns:GetVehicleDetiaInfoSoapIn" />
+      <wsdl:output message="tns:GetVehicleDetiaInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGateNetCameraInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取摄像机信息</wsdl:documentation>
+      <wsdl:input message="tns:GetGateNetCameraInfoSoapIn" />
+      <wsdl:output message="tns:GetGateNetCameraInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryVehicleInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询大门车辆历史数据</wsdl:documentation>
+      <wsdl:input message="tns:QueryVehicleInfoSoapIn" />
+      <wsdl:output message="tns:QueryVehicleInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleAlarm">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取车辆报警</wsdl:documentation>
+      <wsdl:input message="tns:GetVehicleAlarmSoapIn" />
+      <wsdl:output message="tns:GetVehicleAlarmSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminateAlarm">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">消除车辆报警</wsdl:documentation>
+      <wsdl:input message="tns:EliminateAlarmSoapIn" />
+      <wsdl:output message="tns:EliminateAlarmSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyVehiclePlate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">修改车牌信息</wsdl:documentation>
+      <wsdl:input message="tns:ModifyVehiclePlateSoapIn" />
+      <wsdl:output message="tns:ModifyVehiclePlateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryAlarmInfos">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询可疑人物报警</wsdl:documentation>
+      <wsdl:input message="tns:QueryAlarmInfosSoapIn" />
+      <wsdl:output message="tns:QueryAlarmInfosSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="MeasurationMgrHttpGet">
+    <wsdl:operation name="ReceiveScanInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">扫描总入口</wsdl:documentation>
+      <wsdl:input message="tns:ReceiveScanInfoHttpGetIn" />
+      <wsdl:output message="tns:ReceiveScanInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveWeightInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">重量接收总入口</wsdl:documentation>
+      <wsdl:input message="tns:ReceiveWeightInfoHttpGetIn" />
+      <wsdl:output message="tns:ReceiveWeightInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Scanlist">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取测量区扫描枪列表</wsdl:documentation>
+      <wsdl:input message="tns:ScanlistHttpGetIn" />
+      <wsdl:output message="tns:ScanlistHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRfidTag">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">新增标签</wsdl:documentation>
+      <wsdl:input message="tns:AddRfidTagHttpGetIn" />
+      <wsdl:output message="tns:AddRfidTagHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRfidTag">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">删除标签</wsdl:documentation>
+      <wsdl:input message="tns:DeleteRfidTagHttpGetIn" />
+      <wsdl:output message="tns:DeleteRfidTagHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentRfidNO">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取大门标签显示</wsdl:documentation>
+      <wsdl:input message="tns:GetCurrentRfidNOHttpGetIn" />
+      <wsdl:output message="tns:GetCurrentRfidNOHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveRfidInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">RFID识别总入口</wsdl:documentation>
+      <wsdl:input message="tns:ReceiveRfidInfoHttpGetIn" />
+      <wsdl:output message="tns:ReceiveRfidInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BindRfidNO">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">车辆和RFID绑定</wsdl:documentation>
+      <wsdl:input message="tns:BindRfidNOHttpGetIn" />
+      <wsdl:output message="tns:BindRfidNOHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UnBindRfidNO">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">RFID标签解绑</wsdl:documentation>
+      <wsdl:input message="tns:UnBindRfidNOHttpGetIn" />
+      <wsdl:output message="tns:UnBindRfidNOHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryRfidBindInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取已绑定车牌信息</wsdl:documentation>
+      <wsdl:input message="tns:QueryRfidBindInfoHttpGetIn" />
+      <wsdl:output message="tns:QueryRfidBindInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryTop10VehicleInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取最后的10辆车</wsdl:documentation>
+      <wsdl:input message="tns:QueryTop10VehicleInfoHttpGetIn" />
+      <wsdl:output message="tns:QueryTop10VehicleInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastVehicleInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取最后一辆进厂的车</wsdl:documentation>
+      <wsdl:input message="tns:GetLastVehicleInfoHttpGetIn" />
+      <wsdl:output message="tns:GetLastVehicleInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNotMeasurateInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">量測即時信息</wsdl:documentation>
+      <wsdl:input message="tns:GetNotMeasurateInfoHttpGetIn" />
+      <wsdl:output message="tns:GetNotMeasurateInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewMeasurePic">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取最新拍照的一块栈板</wsdl:documentation>
+      <wsdl:input message="tns:GetNewMeasurePicHttpGetIn" />
+      <wsdl:output message="tns:GetNewMeasurePicHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryMeasurateInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询已测量的信息</wsdl:documentation>
+      <wsdl:input message="tns:QueryMeasurateInfoHttpGetIn" />
+      <wsdl:output message="tns:QueryMeasurateInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMeasurationDetailByNO">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据栈板序列号获取测量详情</wsdl:documentation>
+      <wsdl:input message="tns:GetMeasurationDetailByNOHttpGetIn" />
+      <wsdl:output message="tns:GetMeasurationDetailByNOHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAreaInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据区域类型获取区域列表</wsdl:documentation>
+      <wsdl:input message="tns:GetAreaInfoHttpGetIn" />
+      <wsdl:output message="tns:GetAreaInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMeasurationTotalCount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取当天测量总数</wsdl:documentation>
+      <wsdl:input message="tns:GetMeasurationTotalCountHttpGetIn" />
+      <wsdl:output message="tns:GetMeasurationTotalCountHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckMeasurationStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">检查测量信息是否有变化</wsdl:documentation>
+      <wsdl:input message="tns:CheckMeasurationStatusHttpGetIn" />
+      <wsdl:output message="tns:CheckMeasurationStatusHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMeasureNetCameraInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取测量区头的录像机信息</wsdl:documentation>
+      <wsdl:input message="tns:GetMeasureNetCameraInfoHttpGetIn" />
+      <wsdl:output message="tns:GetMeasureNetCameraInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWharfVehicleInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取当前停留在码头的车辆</wsdl:documentation>
+      <wsdl:input message="tns:GetWharfVehicleInfoHttpGetIn" />
+      <wsdl:output message="tns:GetWharfVehicleInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryWharfVehicleInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询码头车辆历史数据</wsdl:documentation>
+      <wsdl:input message="tns:QueryWharfVehicleInfoHttpGetIn" />
+      <wsdl:output message="tns:QueryWharfVehicleInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWharfNetCameraInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取码头的录像机信息</wsdl:documentation>
+      <wsdl:input message="tns:GetWharfNetCameraInfoHttpGetIn" />
+      <wsdl:output message="tns:GetWharfNetCameraInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContainerInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据车辆编号获取装柜信息</wsdl:documentation>
+      <wsdl:input message="tns:GetContainerInfoHttpGetIn" />
+      <wsdl:output message="tns:GetContainerInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContainerInfoByArea">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据码头编号获取该码头装柜信息</wsdl:documentation>
+      <wsdl:input message="tns:GetContainerInfoByAreaHttpGetIn" />
+      <wsdl:output message="tns:GetContainerInfoByAreaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContainerInfoByTime">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据车辆编号和进出码头时间获取装柜信息</wsdl:documentation>
+      <wsdl:input message="tns:GetContainerInfoByTimeHttpGetIn" />
+      <wsdl:output message="tns:GetContainerInfoByTimeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryContainerInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询装柜信息</wsdl:documentation>
+      <wsdl:input message="tns:QueryContainerInfoHttpGetIn" />
+      <wsdl:output message="tns:QueryContainerInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleDetiaInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取大门车辆即时信息★</wsdl:documentation>
+      <wsdl:input message="tns:GetVehicleDetiaInfoHttpGetIn" />
+      <wsdl:output message="tns:GetVehicleDetiaInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGateNetCameraInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取摄像机信息</wsdl:documentation>
+      <wsdl:input message="tns:GetGateNetCameraInfoHttpGetIn" />
+      <wsdl:output message="tns:GetGateNetCameraInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryVehicleInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询大门车辆历史数据</wsdl:documentation>
+      <wsdl:input message="tns:QueryVehicleInfoHttpGetIn" />
+      <wsdl:output message="tns:QueryVehicleInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleAlarm">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取车辆报警</wsdl:documentation>
+      <wsdl:input message="tns:GetVehicleAlarmHttpGetIn" />
+      <wsdl:output message="tns:GetVehicleAlarmHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminateAlarm">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">消除车辆报警</wsdl:documentation>
+      <wsdl:input message="tns:EliminateAlarmHttpGetIn" />
+      <wsdl:output message="tns:EliminateAlarmHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyVehiclePlate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">修改车牌信息</wsdl:documentation>
+      <wsdl:input message="tns:ModifyVehiclePlateHttpGetIn" />
+      <wsdl:output message="tns:ModifyVehiclePlateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryAlarmInfos">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询可疑人物报警</wsdl:documentation>
+      <wsdl:input message="tns:QueryAlarmInfosHttpGetIn" />
+      <wsdl:output message="tns:QueryAlarmInfosHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="MeasurationMgrHttpPost">
+    <wsdl:operation name="ReceiveScanInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">扫描总入口</wsdl:documentation>
+      <wsdl:input message="tns:ReceiveScanInfoHttpPostIn" />
+      <wsdl:output message="tns:ReceiveScanInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveWeightInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">重量接收总入口</wsdl:documentation>
+      <wsdl:input message="tns:ReceiveWeightInfoHttpPostIn" />
+      <wsdl:output message="tns:ReceiveWeightInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Scanlist">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取测量区扫描枪列表</wsdl:documentation>
+      <wsdl:input message="tns:ScanlistHttpPostIn" />
+      <wsdl:output message="tns:ScanlistHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRfidTag">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">新增标签</wsdl:documentation>
+      <wsdl:input message="tns:AddRfidTagHttpPostIn" />
+      <wsdl:output message="tns:AddRfidTagHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRfidTag">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">删除标签</wsdl:documentation>
+      <wsdl:input message="tns:DeleteRfidTagHttpPostIn" />
+      <wsdl:output message="tns:DeleteRfidTagHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentRfidNO">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取大门标签显示</wsdl:documentation>
+      <wsdl:input message="tns:GetCurrentRfidNOHttpPostIn" />
+      <wsdl:output message="tns:GetCurrentRfidNOHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveRfidInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">RFID识别总入口</wsdl:documentation>
+      <wsdl:input message="tns:ReceiveRfidInfoHttpPostIn" />
+      <wsdl:output message="tns:ReceiveRfidInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BindRfidNO">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">车辆和RFID绑定</wsdl:documentation>
+      <wsdl:input message="tns:BindRfidNOHttpPostIn" />
+      <wsdl:output message="tns:BindRfidNOHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UnBindRfidNO">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">RFID标签解绑</wsdl:documentation>
+      <wsdl:input message="tns:UnBindRfidNOHttpPostIn" />
+      <wsdl:output message="tns:UnBindRfidNOHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryRfidBindInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取已绑定车牌信息</wsdl:documentation>
+      <wsdl:input message="tns:QueryRfidBindInfoHttpPostIn" />
+      <wsdl:output message="tns:QueryRfidBindInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryTop10VehicleInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取最后的10辆车</wsdl:documentation>
+      <wsdl:input message="tns:QueryTop10VehicleInfoHttpPostIn" />
+      <wsdl:output message="tns:QueryTop10VehicleInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastVehicleInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取最后一辆进厂的车</wsdl:documentation>
+      <wsdl:input message="tns:GetLastVehicleInfoHttpPostIn" />
+      <wsdl:output message="tns:GetLastVehicleInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNotMeasurateInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">量測即時信息</wsdl:documentation>
+      <wsdl:input message="tns:GetNotMeasurateInfoHttpPostIn" />
+      <wsdl:output message="tns:GetNotMeasurateInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewMeasurePic">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取最新拍照的一块栈板</wsdl:documentation>
+      <wsdl:input message="tns:GetNewMeasurePicHttpPostIn" />
+      <wsdl:output message="tns:GetNewMeasurePicHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryMeasurateInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询已测量的信息</wsdl:documentation>
+      <wsdl:input message="tns:QueryMeasurateInfoHttpPostIn" />
+      <wsdl:output message="tns:QueryMeasurateInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMeasurationDetailByNO">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据栈板序列号获取测量详情</wsdl:documentation>
+      <wsdl:input message="tns:GetMeasurationDetailByNOHttpPostIn" />
+      <wsdl:output message="tns:GetMeasurationDetailByNOHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAreaInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据区域类型获取区域列表</wsdl:documentation>
+      <wsdl:input message="tns:GetAreaInfoHttpPostIn" />
+      <wsdl:output message="tns:GetAreaInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMeasurationTotalCount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取当天测量总数</wsdl:documentation>
+      <wsdl:input message="tns:GetMeasurationTotalCountHttpPostIn" />
+      <wsdl:output message="tns:GetMeasurationTotalCountHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckMeasurationStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">检查测量信息是否有变化</wsdl:documentation>
+      <wsdl:input message="tns:CheckMeasurationStatusHttpPostIn" />
+      <wsdl:output message="tns:CheckMeasurationStatusHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMeasureNetCameraInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取测量区头的录像机信息</wsdl:documentation>
+      <wsdl:input message="tns:GetMeasureNetCameraInfoHttpPostIn" />
+      <wsdl:output message="tns:GetMeasureNetCameraInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWharfVehicleInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取当前停留在码头的车辆</wsdl:documentation>
+      <wsdl:input message="tns:GetWharfVehicleInfoHttpPostIn" />
+      <wsdl:output message="tns:GetWharfVehicleInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryWharfVehicleInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询码头车辆历史数据</wsdl:documentation>
+      <wsdl:input message="tns:QueryWharfVehicleInfoHttpPostIn" />
+      <wsdl:output message="tns:QueryWharfVehicleInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWharfNetCameraInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取码头的录像机信息</wsdl:documentation>
+      <wsdl:input message="tns:GetWharfNetCameraInfoHttpPostIn" />
+      <wsdl:output message="tns:GetWharfNetCameraInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContainerInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据车辆编号获取装柜信息</wsdl:documentation>
+      <wsdl:input message="tns:GetContainerInfoHttpPostIn" />
+      <wsdl:output message="tns:GetContainerInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContainerInfoByArea">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据码头编号获取该码头装柜信息</wsdl:documentation>
+      <wsdl:input message="tns:GetContainerInfoByAreaHttpPostIn" />
+      <wsdl:output message="tns:GetContainerInfoByAreaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContainerInfoByTime">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">根据车辆编号和进出码头时间获取装柜信息</wsdl:documentation>
+      <wsdl:input message="tns:GetContainerInfoByTimeHttpPostIn" />
+      <wsdl:output message="tns:GetContainerInfoByTimeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryContainerInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询装柜信息</wsdl:documentation>
+      <wsdl:input message="tns:QueryContainerInfoHttpPostIn" />
+      <wsdl:output message="tns:QueryContainerInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleDetiaInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取大门车辆即时信息★</wsdl:documentation>
+      <wsdl:input message="tns:GetVehicleDetiaInfoHttpPostIn" />
+      <wsdl:output message="tns:GetVehicleDetiaInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGateNetCameraInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取摄像机信息</wsdl:documentation>
+      <wsdl:input message="tns:GetGateNetCameraInfoHttpPostIn" />
+      <wsdl:output message="tns:GetGateNetCameraInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryVehicleInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询大门车辆历史数据</wsdl:documentation>
+      <wsdl:input message="tns:QueryVehicleInfoHttpPostIn" />
+      <wsdl:output message="tns:QueryVehicleInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleAlarm">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取车辆报警</wsdl:documentation>
+      <wsdl:input message="tns:GetVehicleAlarmHttpPostIn" />
+      <wsdl:output message="tns:GetVehicleAlarmHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminateAlarm">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">消除车辆报警</wsdl:documentation>
+      <wsdl:input message="tns:EliminateAlarmHttpPostIn" />
+      <wsdl:output message="tns:EliminateAlarmHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyVehiclePlate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">修改车牌信息</wsdl:documentation>
+      <wsdl:input message="tns:ModifyVehiclePlateHttpPostIn" />
+      <wsdl:output message="tns:ModifyVehiclePlateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryAlarmInfos">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查询可疑人物报警</wsdl:documentation>
+      <wsdl:input message="tns:QueryAlarmInfosHttpPostIn" />
+      <wsdl:output message="tns:QueryAlarmInfosHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MeasurationMgrSoap" type="tns:MeasurationMgrSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReceiveScanInfo">
+      <soap:operation soapAction="http://tempuri.org/ReceiveScanInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveWeightInfo">
+      <soap:operation soapAction="http://tempuri.org/ReceiveWeightInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Scanlist">
+      <soap:operation soapAction="http://tempuri.org/Scanlist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRfidTag">
+      <soap:operation soapAction="http://tempuri.org/AddRfidTag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRfidTag">
+      <soap:operation soapAction="http://tempuri.org/DeleteRfidTag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentRfidNO">
+      <soap:operation soapAction="http://tempuri.org/GetCurrentRfidNO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveRfidInfo">
+      <soap:operation soapAction="http://tempuri.org/ReceiveRfidInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BindRfidNO">
+      <soap:operation soapAction="http://tempuri.org/BindRfidNO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnBindRfidNO">
+      <soap:operation soapAction="http://tempuri.org/UnBindRfidNO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryRfidBindInfo">
+      <soap:operation soapAction="http://tempuri.org/QueryRfidBindInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryTop10VehicleInfo">
+      <soap:operation soapAction="http://tempuri.org/QueryTop10VehicleInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastVehicleInfo">
+      <soap:operation soapAction="http://tempuri.org/GetLastVehicleInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNotMeasurateInfo">
+      <soap:operation soapAction="http://tempuri.org/GetNotMeasurateInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewMeasurePic">
+      <soap:operation soapAction="http://tempuri.org/GetNewMeasurePic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryMeasurateInfo">
+      <soap:operation soapAction="http://tempuri.org/QueryMeasurateInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMeasurationDetailByNO">
+      <soap:operation soapAction="http://tempuri.org/GetMeasurationDetailByNO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAreaInfo">
+      <soap:operation soapAction="http://tempuri.org/GetAreaInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMeasurationTotalCount">
+      <soap:operation soapAction="http://tempuri.org/GetMeasurationTotalCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckMeasurationStatus">
+      <soap:operation soapAction="http://tempuri.org/CheckMeasurationStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMeasureNetCameraInfo">
+      <soap:operation soapAction="http://tempuri.org/GetMeasureNetCameraInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWharfVehicleInfo">
+      <soap:operation soapAction="http://tempuri.org/GetWharfVehicleInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryWharfVehicleInfo">
+      <soap:operation soapAction="http://tempuri.org/QueryWharfVehicleInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWharfNetCameraInfo">
+      <soap:operation soapAction="http://tempuri.org/GetWharfNetCameraInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContainerInfo">
+      <soap:operation soapAction="http://tempuri.org/GetContainerInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContainerInfoByArea">
+      <soap:operation soapAction="http://tempuri.org/GetContainerInfoByArea" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContainerInfoByTime">
+      <soap:operation soapAction="http://tempuri.org/GetContainerInfoByTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryContainerInfo">
+      <soap:operation soapAction="http://tempuri.org/QueryContainerInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleDetiaInfo">
+      <soap:operation soapAction="http://tempuri.org/GetVehicleDetiaInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGateNetCameraInfo">
+      <soap:operation soapAction="http://tempuri.org/GetGateNetCameraInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryVehicleInfo">
+      <soap:operation soapAction="http://tempuri.org/QueryVehicleInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleAlarm">
+      <soap:operation soapAction="http://tempuri.org/GetVehicleAlarm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminateAlarm">
+      <soap:operation soapAction="http://tempuri.org/EliminateAlarm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyVehiclePlate">
+      <soap:operation soapAction="http://tempuri.org/ModifyVehiclePlate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryAlarmInfos">
+      <soap:operation soapAction="http://tempuri.org/QueryAlarmInfos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MeasurationMgrSoap12" type="tns:MeasurationMgrSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReceiveScanInfo">
+      <soap12:operation soapAction="http://tempuri.org/ReceiveScanInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveWeightInfo">
+      <soap12:operation soapAction="http://tempuri.org/ReceiveWeightInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Scanlist">
+      <soap12:operation soapAction="http://tempuri.org/Scanlist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRfidTag">
+      <soap12:operation soapAction="http://tempuri.org/AddRfidTag" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRfidTag">
+      <soap12:operation soapAction="http://tempuri.org/DeleteRfidTag" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentRfidNO">
+      <soap12:operation soapAction="http://tempuri.org/GetCurrentRfidNO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveRfidInfo">
+      <soap12:operation soapAction="http://tempuri.org/ReceiveRfidInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BindRfidNO">
+      <soap12:operation soapAction="http://tempuri.org/BindRfidNO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnBindRfidNO">
+      <soap12:operation soapAction="http://tempuri.org/UnBindRfidNO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryRfidBindInfo">
+      <soap12:operation soapAction="http://tempuri.org/QueryRfidBindInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryTop10VehicleInfo">
+      <soap12:operation soapAction="http://tempuri.org/QueryTop10VehicleInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastVehicleInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetLastVehicleInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNotMeasurateInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetNotMeasurateInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewMeasurePic">
+      <soap12:operation soapAction="http://tempuri.org/GetNewMeasurePic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryMeasurateInfo">
+      <soap12:operation soapAction="http://tempuri.org/QueryMeasurateInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMeasurationDetailByNO">
+      <soap12:operation soapAction="http://tempuri.org/GetMeasurationDetailByNO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAreaInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetAreaInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMeasurationTotalCount">
+      <soap12:operation soapAction="http://tempuri.org/GetMeasurationTotalCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckMeasurationStatus">
+      <soap12:operation soapAction="http://tempuri.org/CheckMeasurationStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMeasureNetCameraInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetMeasureNetCameraInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWharfVehicleInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetWharfVehicleInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryWharfVehicleInfo">
+      <soap12:operation soapAction="http://tempuri.org/QueryWharfVehicleInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWharfNetCameraInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetWharfNetCameraInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContainerInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetContainerInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContainerInfoByArea">
+      <soap12:operation soapAction="http://tempuri.org/GetContainerInfoByArea" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContainerInfoByTime">
+      <soap12:operation soapAction="http://tempuri.org/GetContainerInfoByTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryContainerInfo">
+      <soap12:operation soapAction="http://tempuri.org/QueryContainerInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleDetiaInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetVehicleDetiaInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGateNetCameraInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetGateNetCameraInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryVehicleInfo">
+      <soap12:operation soapAction="http://tempuri.org/QueryVehicleInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleAlarm">
+      <soap12:operation soapAction="http://tempuri.org/GetVehicleAlarm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminateAlarm">
+      <soap12:operation soapAction="http://tempuri.org/EliminateAlarm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyVehiclePlate">
+      <soap12:operation soapAction="http://tempuri.org/ModifyVehiclePlate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryAlarmInfos">
+      <soap12:operation soapAction="http://tempuri.org/QueryAlarmInfos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MeasurationMgrHttpGet" type="tns:MeasurationMgrHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="ReceiveScanInfo">
+      <http:operation location="/ReceiveScanInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveWeightInfo">
+      <http:operation location="/ReceiveWeightInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Scanlist">
+      <http:operation location="/Scanlist" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRfidTag">
+      <http:operation location="/AddRfidTag" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRfidTag">
+      <http:operation location="/DeleteRfidTag" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentRfidNO">
+      <http:operation location="/GetCurrentRfidNO" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveRfidInfo">
+      <http:operation location="/ReceiveRfidInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BindRfidNO">
+      <http:operation location="/BindRfidNO" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnBindRfidNO">
+      <http:operation location="/UnBindRfidNO" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryRfidBindInfo">
+      <http:operation location="/QueryRfidBindInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryTop10VehicleInfo">
+      <http:operation location="/QueryTop10VehicleInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastVehicleInfo">
+      <http:operation location="/GetLastVehicleInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNotMeasurateInfo">
+      <http:operation location="/GetNotMeasurateInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewMeasurePic">
+      <http:operation location="/GetNewMeasurePic" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryMeasurateInfo">
+      <http:operation location="/QueryMeasurateInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMeasurationDetailByNO">
+      <http:operation location="/GetMeasurationDetailByNO" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAreaInfo">
+      <http:operation location="/GetAreaInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMeasurationTotalCount">
+      <http:operation location="/GetMeasurationTotalCount" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckMeasurationStatus">
+      <http:operation location="/CheckMeasurationStatus" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMeasureNetCameraInfo">
+      <http:operation location="/GetMeasureNetCameraInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWharfVehicleInfo">
+      <http:operation location="/GetWharfVehicleInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryWharfVehicleInfo">
+      <http:operation location="/QueryWharfVehicleInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWharfNetCameraInfo">
+      <http:operation location="/GetWharfNetCameraInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContainerInfo">
+      <http:operation location="/GetContainerInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContainerInfoByArea">
+      <http:operation location="/GetContainerInfoByArea" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContainerInfoByTime">
+      <http:operation location="/GetContainerInfoByTime" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryContainerInfo">
+      <http:operation location="/QueryContainerInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleDetiaInfo">
+      <http:operation location="/GetVehicleDetiaInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGateNetCameraInfo">
+      <http:operation location="/GetGateNetCameraInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryVehicleInfo">
+      <http:operation location="/QueryVehicleInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleAlarm">
+      <http:operation location="/GetVehicleAlarm" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminateAlarm">
+      <http:operation location="/EliminateAlarm" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyVehiclePlate">
+      <http:operation location="/ModifyVehiclePlate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryAlarmInfos">
+      <http:operation location="/QueryAlarmInfos" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MeasurationMgrHttpPost" type="tns:MeasurationMgrHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ReceiveScanInfo">
+      <http:operation location="/ReceiveScanInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveWeightInfo">
+      <http:operation location="/ReceiveWeightInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Scanlist">
+      <http:operation location="/Scanlist" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRfidTag">
+      <http:operation location="/AddRfidTag" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRfidTag">
+      <http:operation location="/DeleteRfidTag" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentRfidNO">
+      <http:operation location="/GetCurrentRfidNO" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveRfidInfo">
+      <http:operation location="/ReceiveRfidInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BindRfidNO">
+      <http:operation location="/BindRfidNO" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnBindRfidNO">
+      <http:operation location="/UnBindRfidNO" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryRfidBindInfo">
+      <http:operation location="/QueryRfidBindInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryTop10VehicleInfo">
+      <http:operation location="/QueryTop10VehicleInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastVehicleInfo">
+      <http:operation location="/GetLastVehicleInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNotMeasurateInfo">
+      <http:operation location="/GetNotMeasurateInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewMeasurePic">
+      <http:operation location="/GetNewMeasurePic" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryMeasurateInfo">
+      <http:operation location="/QueryMeasurateInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMeasurationDetailByNO">
+      <http:operation location="/GetMeasurationDetailByNO" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAreaInfo">
+      <http:operation location="/GetAreaInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMeasurationTotalCount">
+      <http:operation location="/GetMeasurationTotalCount" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckMeasurationStatus">
+      <http:operation location="/CheckMeasurationStatus" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMeasureNetCameraInfo">
+      <http:operation location="/GetMeasureNetCameraInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWharfVehicleInfo">
+      <http:operation location="/GetWharfVehicleInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryWharfVehicleInfo">
+      <http:operation location="/QueryWharfVehicleInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWharfNetCameraInfo">
+      <http:operation location="/GetWharfNetCameraInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContainerInfo">
+      <http:operation location="/GetContainerInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContainerInfoByArea">
+      <http:operation location="/GetContainerInfoByArea" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContainerInfoByTime">
+      <http:operation location="/GetContainerInfoByTime" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryContainerInfo">
+      <http:operation location="/QueryContainerInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleDetiaInfo">
+      <http:operation location="/GetVehicleDetiaInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGateNetCameraInfo">
+      <http:operation location="/GetGateNetCameraInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryVehicleInfo">
+      <http:operation location="/QueryVehicleInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleAlarm">
+      <http:operation location="/GetVehicleAlarm" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminateAlarm">
+      <http:operation location="/EliminateAlarm" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyVehiclePlate">
+      <http:operation location="/ModifyVehiclePlate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryAlarmInfos">
+      <http:operation location="/QueryAlarmInfos" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MeasurationMgr">
+    <wsdl:port name="MeasurationMgrSoap" binding="tns:MeasurationMgrSoap">
+      <soap:address location="http://192.168.10.180/WebService/MeasurationMgr.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MeasurationMgrSoap12" binding="tns:MeasurationMgrSoap12">
+      <soap12:address location="http://192.168.10.180/WebService/MeasurationMgr.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MeasurationMgrHttpGet" binding="tns:MeasurationMgrHttpGet">
+      <http:address location="http://192.168.10.180/WebService/MeasurationMgr.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MeasurationMgrHttpPost" binding="tns:MeasurationMgrHttpPost">
+      <http:address location="http://192.168.10.180/WebService/MeasurationMgr.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,174 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Net;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace SocketUDPSendReceive
+{
+    public partial class SendRec : Form
+    {
+        bool isStart;
+
+        IPEndPoint LocalPoint = null;
+        IPEndPoint RemotePoint = null;
+        Socket SocketUdp = null;
+
+        int SendPort = 1122;  //远程端口
+        int ReceivePort = 1111;  //本地端口
+
+        public SendRec()
+        {
+            InitializeComponent();
+
+            IPBox.Items.AddRange(GetLocalIP().ToArray());
+            IPBox.SelectedIndex = 1;
+        }
+
+        private void btnStartUDP_Click(object sender, EventArgs e)
+        {
+            isStart = true;
+
+            SendPort = Convert.ToInt32(tbSendPort.Text);  //远程端口
+            ReceivePort = Convert.ToInt32(tbRecPort.Text);  //本地端口
+
+            btnStartUDP.Enabled = false;
+            btnSend.Enabled = true;
+            IPBox.Enabled = false;
+            tbSendPort.Enabled = false;
+            tbRecPort.Enabled = false;
+
+            LocalPoint = new IPEndPoint(IPAddress.Parse(IPBox.Text), ReceivePort);
+
+            clients = new UdpClient(LocalPoint);  //本地发送IP 端口
+
+            RemotePoint = new IPEndPoint(IPAddress.Broadcast, SendPort);  //广播发送
+
+            RecvThread();
+        }
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            SendBroadcast();
+        }
+
+        private void SendBroadcast()
+        {
+            byte[] sendData = Encoding.ASCII.GetBytes(tbSend.Text);
+            EndPoint ep = (EndPoint)RemotePoint;
+            SocketUdp.SendTo(sendData, sendData.Length, SocketFlags.None, ep);
+
+        }
+
+        private void RecvThread()
+        {
+            string receiveString = null;
+            byte[] receiveData = null;
+            IPEndPoint remotePoint1 = new IPEndPoint(IPAddress.Any, 111);
+
+            EndPoint rep = (EndPoint)remotePoint1;
+
+            Thread a = new Thread(() =>
+            {
+                while (isStart)
+                {
+                    try
+                    {
+                        SocketUdp.ReceiveFrom(receiveData, ref rep);//接收数据 
+                        remotePoint1 = (IPEndPoint)rep;
+                        if (receiveData == null)
+                            continue;
+                        receiveString = Encoding.ASCII.GetString(receiveData);
+                        this.Invoke(new MethodInvoker(delegate
+                        {
+                            tbReceive.Text += remotePoint1.Address + ":" + remotePoint1.Port + "," + receiveString + "\r\n";
+                            tbReceive.Focus();//获取焦点
+                            tbReceive.Select(tbReceive.TextLength, 0);//光标定位到文本最后
+                            tbReceive.ScrollToCaret();//滚动到光标处
+                        }));
+                        //client.Close();
+                    }
+                    catch
+                    { }
+                }
+            });
+            a.Start();
+        }
+
+
+        public List<string> GetLocalIP()
+        {
+            try
+            {
+                List<string> ipgroup = new List<string>();
+
+                string HostName = Dns.GetHostName(); //得到主机名
+                IPHostEntry IpEntry = Dns.GetHostEntry(HostName);
+                for (int i = 0; i < IpEntry.AddressList.Length; i++)
+                {
+                    //从IP地址列表中筛选出IPv4类型的IP地址
+                    //AddressFamily.InterNetwork表示此IP为IPv4,
+                    //AddressFamily.InterNetworkV6表示此地址为IPv6类型
+                    if (IpEntry.AddressList[i].AddressFamily == AddressFamily.InterNetwork)
+                    {
+                        ipgroup.Add(IpEntry.AddressList[i].ToString());
+                    }
+                }
+                return ipgroup;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("获取本机IP出错:" + ex.Message);
+                return null;
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                timer1.Enabled = true;
+                timer1.Start();
+            }
+            else
+            {
+                timer1.Stop();
+                timer1.Enabled = false;
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            SendBroadcast();
+        }
+
+        private void btnStopUdp_Click(object sender, EventArgs e)
+        {
+            EndUDP();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            EndUDP();
+            Application.Exit();
+        }
+
+        private void EndUDP()
+        {
+            try
+            {
+                isStart = false;
+                SocketUdp.Close();
+            }
+            catch
+            { }
+        }
+    }
+}
